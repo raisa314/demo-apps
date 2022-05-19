@@ -1,0 +1,69 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "description": "sean",
+      "version": "1.0.0",
+      "title": "Seans-Python3-Flask-Rest-Boilerplate",
+      "contact": {
+        "email": "seanwasere@gmail.com"
+      },
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "servers": [
+        {
+          "url": "/"
+        }
+      ],
+      "tags": [
+        {
+          "name": "Api Endpoints",
+          "description": "API for testing Endpoints"
+        }
+      ],
+      "paths": {
+        "/meetup_all": {
+          "get": {
+            "tags": [
+              "Meetup_all"
+            ],
+            "summary": "Show All Meetups",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "schema": {
+                  "$ref": "http://127.0.0.1:5000/meetup_all"
+                }
+              }
+            }
+          }
+        },
+
+        "/meetup_all/{id}": {
+          "get": {
+            "tags": [
+              "find meetup"
+            ],
+            "parameters": [
+              {
+                "in": "path",
+                "name": "id",
+                "required": true,
+                "type": "integer"
+              }
+            ],
+            "summary": "find meetup by id",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "schema": {
+                  "$ref": "http://127.0.0.1:5000/meetup_all"
+                }
+              }
+            }
+          }
+        }
+    }
+  }

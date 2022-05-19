@@ -1,0 +1,5 @@
+export const ActionTypes={
+    ADD_MEETING:"ADD_MEETING",
+    SEE_DETAIL:"SEE_DETAIL",
+    REMOVE_MEETING:"REMOVE_MEETING",
+}
