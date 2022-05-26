@@ -13,6 +13,7 @@ var count=0;
 function App() { 
     const handleSubmit = async(event) => {
         event.preventDefault();
+        window.location = "http://localhost:3000/";
         console.log("handleSubmit Runs");
         var title=event.target.title.value;
         var description= event.target.description.value;
@@ -22,6 +23,7 @@ function App() {
         description:description}
         )
         .catch(error => console.log(error))
+
       };
 
     //const [toggle_details,setToggle_details] = useState(false);

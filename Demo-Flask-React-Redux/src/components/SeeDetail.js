@@ -1,13 +1,6 @@
 import { useEffect,useState } from "react";
-// import "./base.css";
-// import "./main.css";
-// import "./meetup-details.css";
-// import "./add_meeting.css";
-import axios from "axios"
-// import ArticleList from "./components/MeetupList";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-//import { setMeeting } from "./store/actions/mactions";
 
 export const SeeDetail = (props) => {
     let meetings = useSelector((state) => state.allmeeting.meetings);
@@ -42,6 +35,9 @@ export const SeeDetail = (props) => {
    </footer>
    </section>
    
+   <section id="registration">
+            <h2>Join US!</h2>FORM
+  </section>
    
    </article>
    </div>
