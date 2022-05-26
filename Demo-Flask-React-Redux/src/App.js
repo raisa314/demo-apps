@@ -4,20 +4,16 @@ import "./main.css";
 import "./meetup-details.css";
 import "./add_meeting.css";
 import axios from "axios"
-// import ArticleList from "./components/MeetupList";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { setMeeting } from "./store/actions/mactions";
-//import  {MeetupList}  from "./components/MeetupList";
+import { SeeDetail } from "./components/SeeDetail";
 
-
-var count=-1;
+var count=0;
 function App() { 
     const handleSubmit = async(event) => {
         event.preventDefault();
         console.log("handleSubmit Runs");
-        // Do post request or get request
-        // Code here
         var title=event.target.title.value;
         var description= event.target.description.value;
         const response= await axios
@@ -28,14 +24,14 @@ function App() {
         .catch(error => console.log(error))
       };
 
-    const [toggle_details,setToggle_details] = useState(false);
+    //const [toggle_details,setToggle_details] = useState(false);
     const [toggle_add,setToggle_add] = useState(false);
     const dispatch= useDispatch();
 
-    const onDetailsBtnClick = (count) =>{
-        setToggle_details(!toggle_details);
-        //console.log(toggle_details);
-    }
+    // const onDetailsBtnClick = (count) =>{
+    //     setToggle_details(!toggle_details);
+    //     //console.log(toggle_details);
+    // }
 
     const onAddBtnClick = () =>{
         setToggle_add(!toggle_add);
@@ -72,7 +68,7 @@ function App() {
                 <div className="box">
                     <form method="POST" onSubmit={handleSubmit}>
                         <div className="field">
-                            <div className="control">
+                        <div className="control">
                                 <input className="input is-large" type="text" name="title" placeholder="title" autoFocus=""/>
                             </div>
                         </div>
@@ -113,11 +109,9 @@ function App() {
             </div>
         </div>
         
-        <div className="meetup-actions">
-            <button className="btn" onClick={()=>onDetailsBtnClick()}>More Details</button>
-            {/* <button className="btn" onClick={()=>onAddBtnClick()}>Add Meetup</button> */}
-            {/* <a href="meetup-details" className="btn" onClick={()=>onDetailsBtnClick()}>More Details</a> */}
-            {/* <a href="add_meetups" className="btn">Set Meeting</a> */}
+        <SeeDetail count={count}/>
+        {/* <div className="meetup-actions">
+            <button className="btn" onClick={()=>onDetailsBtnClick(count)}>More Details</button>
         </div>
         {toggle_details?
         <div>
@@ -143,7 +137,7 @@ function App() {
         </section>
         </article>
         </div>
-    :""}
+    :""} */}
             </article>
             </li>
             </ol>
