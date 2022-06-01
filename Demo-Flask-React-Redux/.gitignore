@@ -11,6 +11,10 @@
 # production
 /build
 
+#venv
+backend_flask/flask_venv
+backend_flask/.vscode
+
 # misc
 .DS_Store
 .env.local
