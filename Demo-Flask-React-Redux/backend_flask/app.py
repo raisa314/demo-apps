@@ -14,6 +14,7 @@ import json
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///meetup.sqlite3'
 app.config['SECRET_KEY'] = "random string"
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 CORS(app)
