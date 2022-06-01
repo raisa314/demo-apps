@@ -56,6 +56,9 @@ def load_user(id):
     # since the id is just the primary key of our user table, use it in the query for the user
     return User.query.get(int(id))
 
+def test_meeting():
+    return 200
+
 @app.route('/login')
 def login():
     return render_template('login.html')
